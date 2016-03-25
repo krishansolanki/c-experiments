@@ -33,3 +33,4 @@
 
 *.xcworkspace/
 .DS_Store
+*.xcodeproj/
