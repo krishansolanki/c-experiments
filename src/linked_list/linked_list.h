@@ -10,5 +10,8 @@
 #define ____linked_list__
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
 #endif /* defined(____linked_list__) */
