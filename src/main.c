@@ -6,7 +6,7 @@
 //  Copyright (c) 2016 Krishan Solanki. All rights reserved.
 //
 
-#include <stdio.h>
+#include "main.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...

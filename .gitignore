@@ -34,3 +34,6 @@
 *.xcworkspace/
 .DS_Store
 *.xcodeproj/
+
+src/tests/build/
+build/
