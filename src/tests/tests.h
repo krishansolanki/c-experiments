@@ -12,7 +12,6 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <setjmp.h>
-#include "../../include/cmocka.h"
-
+#include <cmocka.h>
 
 #endif

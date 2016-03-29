@@ -15,3 +15,8 @@
 #include <string.h>
 
 #endif /* defined(____linked_list__) */
+
+typedef struct node {
+    int data;
+    struct node *pLink;
+} node;
