@@ -14,7 +14,7 @@ static struct node *createNode(int data) {
     
         pTempNode->data = data;
 
-    pTempNode->pLink = NULL;
+    pTempNode->pNext = NULL;
     
     return pTempNode;
 }
@@ -27,18 +27,30 @@ void addNodeToList(node *head, int data) {
     struct node *pTemp = createNode(data);
     struct node *pCurrent = head;
     
-    while(pCurrent->pLink) {
-        pCurrent = pCurrent->pLink;
+    while(pCurrent->pNext) {
+        pCurrent = pCurrent->pNext;
     }
     
-    pCurrent->pLink = pTemp;
+    pCurrent->pNext = pTemp;
 }
 
-int count(node *temp)
-{
-    if(temp == NULL)
-        return(0);
-    return(1 + count(temp->pLink));
+void deleteNode(node *pHead, int position) {
+    struct node *pTemp = pHead;
+    struct node *pPrev;
+    int nodeCount = count(pTemp);
+    
+    if(position > 0 && position <= nodeCount) {
+        for (int i = 0; i < position; i++) {
+            if (i == (position-1)) {
+                pPrev = pTemp;
+                pTemp = pTemp->pNext;
+                pPrev->pNext = pTemp->pNext;
+                free(pTemp);
+            }else {
+                pTemp = pTemp->pNext;
+            }
+        }
+    }
 }
 
 

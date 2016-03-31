@@ -18,5 +18,12 @@
 
 typedef struct node {
     int data;
-    struct node *pLink;
+    struct node *pNext;
 } node;
+
+int count(node *linkedNode)
+{
+    if(linkedNode == NULL)
+        return(0);
+    return(1 + count(linkedNode->pNext));
+}
