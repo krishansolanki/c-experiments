@@ -10,10 +10,9 @@
 
 static struct node *createNode(int data) {
     struct node *pTempNode;
-    pTempNode = malloc(sizeof(struct node));
     
-        pTempNode->data = data;
-
+    pTempNode = malloc(sizeof(struct node));
+    pTempNode->data = data;
     pTempNode->pNext = NULL;
     
     return pTempNode;
