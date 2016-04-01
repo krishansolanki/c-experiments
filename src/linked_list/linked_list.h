@@ -5,6 +5,7 @@
 //  Created by Krishan Solanki on 25/03/2016.
 //
 //
+
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
@@ -15,16 +16,21 @@
 #include <string.h>
 
 
-typedef struct {
+typedef struct Node {
     int data;
     struct Node *pNext;
 } Node;
 
-static struct Node *
-create(int data);
+struct Node *
+linked_list_create();
 
-static struct Node *
-linked_list_create(int data);
+void
+linked_list_add(Node *head, int data);
+
+void
+linked_list_delete(Node *pHead, int position);
 
 int
 linked_list_count(Node *linkedNode);
+
+#endif

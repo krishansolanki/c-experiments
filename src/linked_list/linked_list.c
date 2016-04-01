@@ -8,18 +8,18 @@
 
 #include "linked_list.h"
 
-static struct node *
+static struct Node *
 create(int data);
 
-struct node *
+struct Node *
 linked_list_create() {
     return create(0);
 }
 
 void
-linked_list_add(node *head, int data) {
-    struct node *pTemp = create(data);
-    struct node *pCurrent = head;
+linked_list_add(Node *head, int data) {
+    struct Node *pTemp = create(data);
+    struct Node *pCurrent = head;
     
     while(pCurrent->pNext) {
         pCurrent = pCurrent->pNext;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2016 Krishan Solanki. All rights reserved.
 //
 
-#ifndef c_experiments_tests_h
-#define c_experiments_tests_h
+#ifndef TESTS_H
+#define TESTS_H
 
 #include <stdarg.h>
 #include <stddef.h>
