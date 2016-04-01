@@ -8,23 +8,17 @@
 
 #include "linked_list.h"
 
-static struct node *createNode(int data) {
-    struct node *pTempNode;
-    pTempNode = malloc(sizeof(struct node));
-    
-        pTempNode->data = data;
+static struct node *
+create(int data);
 
-    pTempNode->pNext = NULL;
-    
-    return pTempNode;
+struct node *
+linked_list_create() {
+    return create(0);
 }
 
-struct node *createHeadNode() {
-    return createNode(0);
-}
-
-void addNodeToList(node *head, int data) {
-    struct node *pTemp = createNode(data);
+void
+linked_list_add(node *head, int data) {
+    struct node *pTemp = create(data);
     struct node *pCurrent = head;
     
     while(pCurrent->pNext) {
@@ -34,10 +28,11 @@ void addNodeToList(node *head, int data) {
     pCurrent->pNext = pTemp;
 }
 
-void deleteNode(node *pHead, int position) {
-    struct node *pTemp = pHead;
-    struct node *pPrev;
-    int nodeCount = count(pTemp);
+void
+linked_list_delete(Node *pHead, int position) {
+    struct Node *pTemp = pHead;
+    struct Node *pPrev;
+    int nodeCount = linked_list_count(pTemp);
     
     if(position > 0 && position <= nodeCount) {
         for (int i = 0; i < position; i++) {
@@ -51,6 +46,28 @@ void deleteNode(node *pHead, int position) {
             }
         }
     }
+}
+
+int
+linked_list_count(Node *linkedNode)
+{
+    if(linkedNode == NULL) {
+        return(0);
+    }
+    
+    return(1 + linked_list_count(linkedNode->pNext));
+}
+
+static struct Node *
+create(int data) {
+    struct Node *pTempNode;
+    pTempNode = malloc(sizeof(struct Node));
+    
+    pTempNode->data = data;
+    
+    pTempNode->pNext = NULL;
+    
+    return pTempNode;
 }
 
 

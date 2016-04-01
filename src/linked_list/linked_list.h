@@ -5,25 +5,26 @@
 //  Created by Krishan Solanki on 25/03/2016.
 //
 //
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
-#ifndef ____linked_list__
-#define ____linked_list__
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 
-#endif /* defined(____linked_list__) */
 
-typedef struct node {
+typedef struct {
     int data;
-    struct node *pNext;
-} node;
+    struct Node *pNext;
+} Node;
 
-int count(node *linkedNode)
-{
-    if(linkedNode == NULL)
-        return(0);
-    return(1 + count(linkedNode->pNext));
-}
+static struct Node *
+create(int data);
+
+static struct Node *
+linked_list_create(int data);
+
+int
+linked_list_count(Node *linkedNode);
