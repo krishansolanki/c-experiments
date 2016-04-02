@@ -11,9 +11,14 @@
 static struct Node *
 create(int data);
 
-struct Node *
-linked_list_create() {
-    return create(0);
+struct Node
+linked_list_init() {
+    struct Node pTempNode;
+    //pTempNode = malloc(sizeof(struct Node));
+    pTempNode.data = 0;
+    pTempNode.pNext = NULL;
+    
+    return pTempNode;
 }
 
 void
@@ -58,13 +63,19 @@ linked_list_count(Node *linkedNode)
     return(1 + linked_list_count(linkedNode->pNext));
 }
 
+void
+linked_list_destroy(Node *pHead) {
+    if(pHead == NULL) {
+        return;
+    }
+}
+
 static struct Node *
 create(int data) {
     struct Node *pTempNode;
+    
     pTempNode = malloc(sizeof(struct Node));
-    
     pTempNode->data = data;
-    
     pTempNode->pNext = NULL;
     
     return pTempNode;

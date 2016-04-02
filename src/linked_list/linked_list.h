@@ -21,8 +21,8 @@ typedef struct Node {
     struct Node *pNext;
 } Node;
 
-struct Node *
-linked_list_create();
+struct Node
+linked_list_init();
 
 void
 linked_list_add(Node *head, int data);
@@ -32,5 +32,8 @@ linked_list_delete(Node *pHead, int position);
 
 int
 linked_list_count(Node *linkedNode);
+
+void
+linked_list_destroy(Node *pHead);
 
 #endif
